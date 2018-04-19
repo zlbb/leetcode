@@ -10,12 +10,10 @@
  * @return {number[]}
  */
 
-var inorderTraversal = function(root) {
+var inorderTraversal = function (root) {
   var res = []
-  function helper(root){
-    if(root == null){
-      return 
-    }
+  function helper(root) {
+    if (root == null) return
     helper(root.left)
     res.push(root.val)
     helper(root.right)

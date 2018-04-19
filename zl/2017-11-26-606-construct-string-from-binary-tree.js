@@ -9,26 +9,22 @@
  * @param {TreeNode} t
  * @return {string}
  */
-var tree2str = function(root) {
-  if(root == null){
+var tree2str = function (root) {
+  if (root == null) {
     return ''
   }
   var res = ''
-  function helper(root){
-
+  function helper(root) {
     res += '(' + root.val
-
-    if(root.left == null && root.right != null){
+    if (root.left == null && root.right != null) {
       res += '()'
     }
-    if(root.left != null){
+    if (root.left != null)
       helper(root.left)
-    }
-    if(root.right != null){
+    if (root.right != null)
       helper(root.right)
-    }
     res += ')'
   }
   helper(root)
-  return res.slice(1,-1)
+  return res.slice(1, -1)
 };
