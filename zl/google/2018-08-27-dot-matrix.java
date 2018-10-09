@@ -14,20 +14,21 @@ class Solution {
           l[i + 1] = j;
         break;
       }
-    }
-    if (j == mat[0].length) {
-      l[i] = l[i - 1];
-      empty[i] = 1;
-    }
-    j = mat[0].length - 1;
-    for (; j >= 0; j--) {
-      if (mat[i][j] == 1)
-        r[i + 1] = j;
-      break;
-    }
-    if (j < 0) {
-      r[i] = r[i - 1];
-      empty[i] = 1;
+
+      if (j == mat[0].length) {
+        l[i] = l[i - 1];
+        empty[i] = 1;
+      }
+      j = mat[0].length - 1;
+      for (; j >= 0; j--) {
+        if (mat[i][j] == 1)
+          r[i + 1] = j;
+        break;
+      }
+      if (j < 0) {
+        r[i] = r[i - 1];
+        empty[i] = 1;
+      }
     }
     int[] dpl = new int[l.length];
     int[] dpr = new int[r.length];
